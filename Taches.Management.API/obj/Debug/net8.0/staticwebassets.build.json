@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "YPEzPebpZoIvf5N3N0iEKktwWHTID0NMB9yrOF5nQ5s=",
+  "Source": "Taches.Management.API",
+  "BasePath": "_content/Taches.Management.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

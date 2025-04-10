@@ -1,0 +1,78 @@
+﻿@page "/projet"
+
+@using System.Security.Claims
+
+
+@attribute [Authorize]
+
+
+@inject HttpClient Http
+<PageTitle>Gestion Projet</PageTitle>
+
+<RadzenCard>
+    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End" AlignItems="AlignItems.Center" class="mt-2">
+         <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End" AlignItems="AlignItems.Center" class="mt-2"> 
+         <MatButton OnClick="@onAjouter" Raised="true" Class="bg-success">Ajouter Projet</MatButton> 
+    </RadzenStack> 
+    </RadzenStack>
+</RadzenCard>          
+
+<RadzenDataGrid @ref="dataGrid" Data="@projets" Count="@count" TItem="ProjetModel" LoadData="@getAll" AllowPaging=true PageSize="5" class="mt-3 shadow">
+    <Columns>
+        <RadzenDataGridColumn TItem="ProjetModel" Property="Nom" Title="Nom" />
+        @* <RadzenDataGridColumn TItem="ProjetModel" Property="Manager" Title="Chef de Projet"> *@
+        @*    <Template Context="order"> *@
+        @*        <RadzenText> @order?.Manager?.UserName</RadzenText> *@
+        @*      </Template> *@
+        @*  </RadzenDataGridColumn> *@
+
+        <RadzenDataGridColumn TItem="ProjetModel" Property="DateDebut" Title="Date de Début" />
+        <RadzenDataGridColumn TItem="ProjetModel" Property="DateFin" Title="Date de Fin" />
+        <RadzenDataGridColumn TItem="ProjetModel" Property="Statut" Title="Statut" />
+        <RadzenDataGridColumn TItem="ProjetModel" Property="Id" Title="Actions">
+            <Template Context="order">
+                <div class="d-flex overflow-auto">
+
+
+
+                    <AuthorizeView role="Admin">
+                      <Authorized>
+
+                    @* @if (_userService.HasRole("Admin", User)) *@
+                    @* { *@
+                         <MatIconButton Icon="delete_forever" Style="color:red !important;" OnClick="@(_ => onDelete((int) order.Id))">
+                         </MatIconButton> 
+
+                         <MatIconButton Icon="create" Style="color:dodgerblue !important;" OnClick="@(() => onUpdate(order))">
+                         </MatIconButton> 
+                    @* } *@
+
+                    </Authorized>
+                    </AuthorizeView>
+
+                     <MatIconButton Icon="launch" Style="color:darkslateblue !important;" OnClick="@(()=>onVoirDetails((int) order.Id))">
+                     </MatIconButton>
+                 </div>
+            </Template>
+        </RadzenDataGridColumn>
+    </Columns>
+</RadzenDataGrid>
+
+<MatDialog @bind-IsOpen="@dialogIsOpen">
+    <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.SpaceBetween" AlignItems="AlignItems.Center">
+        <MatDialogTitle><span class="bg-light p-1 text-dark rounded fw-light">@title</span></MatDialogTitle>
+        <MatIconButton OnClick="@(e => { dialogIsOpen = false; projetChange = null; })" Icon="clear" Style="color:black !important;">
+        </MatIconButton>
+    </RadzenStack>
+
+    <MatDialogContent>
+        @if (dialogIsOpen)
+        {
+            <AddEditProjet projetDto=@projetChange onItemChange="@onItemChange"></AddEditProjet>
+        }
+    </MatDialogContent>
+</MatDialog>
+
+@code
+{
+}

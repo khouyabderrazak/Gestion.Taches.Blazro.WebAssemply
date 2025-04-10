@@ -1,0 +1,43 @@
+
+
+.child-container[b-4cytefagy3] {
+    position: relative;
+}
+
+/** {
+    font-family: "Poppins", serif;
+    font-weight: 100;
+    font-style: normal;
+}*/
+@property --angle {
+    syntax:"<angle>";
+    initial-value:0deg;
+    inherits:false;
+}
+
+.child-container[b-4cytefagy3]::after,
+.child-container[b-4cytefagy3]::before {
+    content: "";
+    width: 102%;
+    height: 106%;
+    position: absolute;
+    z-index: -1;
+    left: -1%;
+    top: -3%;
+    background-image: conic-gradient(from var(--angle),transparent 80%,dodgerblue);
+    padding-right: 200px !important;
+    animation: 3s spin-b-4cytefagy3 linear;
+}
+     
+.child-container[b-4cytefagy3]::before{
+    filter:blur(1.5rem);
+    /*opacity:0.5*/
+}
+
+@keyframes spin-b-4cytefagy3{
+    from{
+        --angle:0deg
+    }to{
+         --angle:360deg
+     }
+}

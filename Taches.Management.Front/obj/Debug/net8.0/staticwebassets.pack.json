@@ -1,0 +1,69 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\akhouy\\Desktop\\projets\\Gestion.Taches.Blazro.WebAssemply\\Taches.Management.Front\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\akhouy\\Desktop\\projets\\Gestion.Taches.Blazro.WebAssemply\\Taches.Management.Front\\obj\\Debug\\net8.0\\scopedcss\\bundle\\Taches.Management.Front.styles.css",
+      "PackagePath": "staticwebassets\\Taches.Management.Front.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\akhouy\\Desktop\\projets\\Gestion.Taches.Blazro.WebAssemply\\Taches.Management.Front\\wwwroot\\css\\app.css",
+      "PackagePath": "staticwebassets\\css\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\akhouy\\Desktop\\projets\\Gestion.Taches.Blazro.WebAssemply\\Taches.Management.Front\\wwwroot\\css\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\akhouy\\Desktop\\projets\\Gestion.Taches.Blazro.WebAssemply\\Taches.Management.Front\\wwwroot\\css\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\akhouy\\Desktop\\projets\\Gestion.Taches.Blazro.WebAssemply\\Taches.Management.Front\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\akhouy\\Desktop\\projets\\Gestion.Taches.Blazro.WebAssemply\\Taches.Management.Front\\wwwroot\\icon-192.png",
+      "PackagePath": "staticwebassets\\icon-192.png"
+    },
+    {
+      "Id": "C:\\Users\\akhouy\\Desktop\\projets\\Gestion.Taches.Blazro.WebAssemply\\Taches.Management.Front\\wwwroot\\images\\back8.jpeg",
+      "PackagePath": "staticwebassets\\images\\back8.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\akhouy\\Desktop\\projets\\Gestion.Taches.Blazro.WebAssemply\\Taches.Management.Front\\wwwroot\\images\\logo1.png",
+      "PackagePath": "staticwebassets\\images\\logo1.png"
+    },
+    {
+      "Id": "C:\\Users\\akhouy\\Desktop\\projets\\Gestion.Taches.Blazro.WebAssemply\\Taches.Management.Front\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\akhouy\\Desktop\\projets\\Gestion.Taches.Blazro.WebAssemply\\Taches.Management.Front\\wwwroot\\sample-data\\weather.json",
+      "PackagePath": "staticwebassets\\sample-data\\weather.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Taches.Management.Front.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Taches.Management.Front.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Taches.Management.Front.props",
+      "PackagePath": "build\\Taches.Management.Front.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Taches.Management.Front.props",
+      "PackagePath": "buildMultiTargeting\\Taches.Management.Front.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Taches.Management.Front.props",
+      "PackagePath": "buildTransitive\\Taches.Management.Front.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

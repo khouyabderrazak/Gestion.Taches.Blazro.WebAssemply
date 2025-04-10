@@ -1,0 +1,52 @@
+﻿@page "/"
+@using Microsoft.AspNetCore.Authorization;
+
+@attribute [Authorize]
+
+<PageTitle>Home</PageTitle>
+
+@if (Role == "Admin")
+{
+  <RadzenCard>
+        <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End" AlignItems="AlignItems.Center" class="mt-2">
+            <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.End" AlignItems="AlignItems.Center" class="mt-2">
+                <MatButton OnClick="()=> dialogIsOpen = !dialogIsOpen" Raised="true" Class="bg-success">Add New User</MatButton>
+            </RadzenStack>
+        </RadzenStack>
+  </RadzenCard>
+}
+<table class="table shadow bg-white table-hover p-2 rounded mt-3"> 
+    <thead>
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>User Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(users is not null)
+        {
+            
+        @foreach (var user in users)
+        {
+            <tr>
+                <td> @user.FirstName </td>
+                <td> @user.LastName </td>
+                <td> @user.Email </td>
+                <td> @user.Username </td>
+            </tr>
+        }
+        }
+    </tbody>
+</table>
+<MatDialog @bind-IsOpen="@dialogIsOpen">
+         <MatDialogTitle><span class="bg-light p-1 text-dark rounded fw-light">Add User</span></MatDialogTitle>
+    <MatDialogContent>
+        @if (dialogIsOpen)
+        {
+            <AddUser closeDialog=@OnCloseDialog ></AddUser>
+        }
+    </MatDialogContent>
+</MatDialog>
+

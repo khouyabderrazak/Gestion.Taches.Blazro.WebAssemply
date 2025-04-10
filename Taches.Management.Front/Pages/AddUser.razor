@@ -1,0 +1,31 @@
+﻿<EditForm Model="User" OnValidSubmit="Submit">
+    <ValidationSummary />
+    <DataAnnotationsValidator />
+
+        <div class="mb-3">
+            <label class="form-label">First Name</label>
+            <input type="text" @bind-value="@User.FirstName" class="form-control" placeholder="....">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" @bind-value="@User.LastName" placeholder="....">
+        </div>
+ 
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" @bind-value="@User.Email" placeholder="....">
+        </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" @bind-value="@User.PhoneNumber" placeholder="....">
+    </div>
+
+    <div class="mb-3">
+        <input type="submit" class="btn btn-success text-white" value="Valider" />
+    </div>
+</EditForm>
+
+@code {
+
+}

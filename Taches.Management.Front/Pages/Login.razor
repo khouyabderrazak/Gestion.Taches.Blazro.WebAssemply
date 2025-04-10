@@ -1,0 +1,79 @@
+﻿@page "/login"
+@inject IAuthService AuthService;
+@inject NavigationManager NavigationManager
+
+
+
+<div class="row" style="height:100vh;">
+  <div class="col-md-4 rounded-3 shadow bg-white mx-auto my-auto p-3 m-0 child-container">
+    
+    
+           <div class="d-flex align-items-center my-2">
+            <div class="flex-grow-1 bg-dark" style="height:1px;"></div>
+                <h4 class="px-2">Login</h4>
+            <div class="flex-grow-1 bg-dark" style="height:1px;"></div>
+           </div>
+           
+             
+            @if (ShowErrors)
+            {
+                <div class="alert alert-danger" role="alert">
+                    <p>@Error</p>
+                </div>
+            }
+
+            <div class="card bg-transparent">
+                <div class="card-body">
+                    @* <h5 class="card-title">Please enter your details</h5> *@
+                    <EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+                        <DataAnnotationsValidator />
+                        <ValidationSummary />
+
+                        <div class="form-group">
+                            <label for="username" class="text-dark">User Name</label>
+                            <InputText Id="username" Class="form-control my-1" @bind-Value="loginModel.UserName" />
+                            <ValidationMessage For="@(() => loginModel.UserName)" />
+                        </div>
+                        <div class="form-group mt-3">
+                            <label for="password" class="text-dark">Password</label>
+                        <InputText Id="password" type="password" Class="form-control my-1" @bind-Value="loginModel.PasswordHash" />
+                        <ValidationMessage For="@(() => loginModel.PasswordHash)" />
+                        </div>
+                        <button type="submit" style="background-color:dodgerblue" class="btn text-white mt-4">Submit</button>
+                    </EditForm>
+                </div>
+            </div>
+        @* </div> *@
+
+  </div>
+</div>
+ 
+ 
+@code {
+
+    private LoginModel loginModel = new LoginModel();
+    private bool ShowErrors;
+    private string Error = "";
+
+
+
+       private async Task HandleLogin()
+    {
+        ShowErrors = false;
+        Error = "";
+
+        var result = await AuthService.Login(loginModel);
+
+        if (result is not null && !string.IsNullOrWhiteSpace(result.Token))
+        {
+            NavigationManager.NavigateTo("/");
+        }
+        else
+        {
+            Error = result?.Message ?? "Login failed. Please try again.";
+            ShowErrors = true;
+        }
+    
+    }
+
+}

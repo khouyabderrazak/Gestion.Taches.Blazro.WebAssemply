@@ -1,0 +1,196 @@
+/* /Layout/MainLayout.razor.rz.scp.css */
+.page[b-7nlb46vlir] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-7nlb46vlir] {
+    flex: 1;
+}
+
+.sidebar[b-7nlb46vlir] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-7nlb46vlir] {
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+    .top-row[b-7nlb46vlir]  a, .top-row[b-7nlb46vlir]  .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row[b-7nlb46vlir]  a:hover, .top-row[b-7nlb46vlir]  .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row[b-7nlb46vlir]  a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row[b-7nlb46vlir] {
+        justify-content: space-between;
+    }
+
+    .top-row[b-7nlb46vlir]  a, .top-row[b-7nlb46vlir]  .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-7nlb46vlir] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-7nlb46vlir] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-7nlb46vlir] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth[b-7nlb46vlir]  a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row[b-7nlb46vlir], article[b-7nlb46vlir] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+/* /Layout/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-87hecd6rew] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-87hecd6rew] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-87hecd6rew] {
+    font-size: 1.1rem;
+}
+
+.oi[b-87hecd6rew] {
+    width: 2rem;
+    font-size: 1.1rem;
+    vertical-align: text-top;
+    top: -2px;
+}
+
+.nav-item[b-87hecd6rew] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+    font-weight: bold !important;
+}
+
+.nav-link[b-87hecd6rew] {
+    color: black !important;
+}
+
+.nav-item:first-of-type[b-87hecd6rew] {
+    padding-top: 1rem;
+}
+
+.nav-item:last-of-type[b-87hecd6rew] {
+    padding-bottom: 1rem;
+}
+
+.nav-item[b-87hecd6rew]  a {
+    color: #d7d7d7;
+    border-radius: 4px;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    line-height: 3rem;
+}
+
+    .nav-item[b-87hecd6rew]  a.active {
+        background-color: dodgerblue !important;
+        color: white;
+    }
+
+    .nav-item[b-87hecd6rew]  a:hover {
+        background-color: dodgerblue !important;
+        color: white;
+    }
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-87hecd6rew] {
+        display: none;
+    }
+
+    .collapse[b-87hecd6rew] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+
+    .nav-scrollable[b-87hecd6rew] {
+        /* Allow sidebar to scroll for tall menus */
+        height: calc(100vh - 3.5rem);
+        overflow-y: auto;
+    }
+}
+/* /Pages/Login.razor.rz.scp.css */
+
+
+.child-container[b-4cytefagy3] {
+    position: relative;
+}
+
+/** {
+    font-family: "Poppins", serif;
+    font-weight: 100;
+    font-style: normal;
+}*/
+@property --angle {
+    syntax:"<angle>";
+    initial-value:0deg;
+    inherits:false;
+}
+
+.child-container[b-4cytefagy3]::after,
+.child-container[b-4cytefagy3]::before {
+    content: "";
+    width: 102%;
+    height: 106%;
+    position: absolute;
+    z-index: -1;
+    left: -1%;
+    top: -3%;
+    background-image: conic-gradient(from var(--angle),transparent 80%,dodgerblue);
+    padding-right: 200px !important;
+    animation: 3s spin-b-4cytefagy3 linear;
+}
+     
+.child-container[b-4cytefagy3]::before{
+    filter:blur(1.5rem);
+    /*opacity:0.5*/
+}
+
+@keyframes spin-b-4cytefagy3{
+    from{
+        --angle:0deg
+    }to{
+         --angle:360deg
+     }
+}

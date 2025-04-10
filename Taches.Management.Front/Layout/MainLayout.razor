@@ -1,0 +1,40 @@
+﻿@inherits LayoutComponentBase
+@using Microsoft.AspNetCore.Components.Authorization;
+
+
+<div class="page overflow-hidden">
+    <AuthorizeView>
+        <Authorized>
+            <div class="sidebar">
+                <NavMenu />
+            </div>
+        </Authorized>
+    </AuthorizeView>
+
+    <main class="vh-100 d-flex flex-column">
+        <AuthorizeView>
+            <Authorized>
+                <div class="top-row px-4">
+                    <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+        <article class="content px-4 h-auto d-flex flex-column flex-grow-1 overflow-scroll">
+            <RadzenComponents />
+            <RadzenCard class="p-0  flex-grow-1 bg-transparent">
+                @Body
+            </RadzenCard>
+            <RadzenCard class="my-2">
+                <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Center" AlignItems="AlignItems.Center">
+                    <RadzenText>
+                        &copy; abderrazzak khouy 2024
+                    </RadzenText>
+                </RadzenStack>
+            </RadzenCard>
+        </article>
+
+    </main>
+</div>
+
+
+

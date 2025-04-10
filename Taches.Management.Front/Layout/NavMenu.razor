@@ -1,0 +1,72 @@
+﻿
+@inject IAuthService Auth;
+
+<div class="top-row ps-3 navbar bg-primary">
+    <div class="container-fluid bg-primary">
+        <RadzenStack class="navbar-brand" Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
+             <img src="images/logo1.png" style="width:30px;" />
+             <a class="navbar-brand text-white" href="">SyncWork</a>
+        </RadzenStack>
+        <button title="Menu de navigation" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <MatIcon Icon="@MatIconNames.Menu" Class="text-white"></MatIcon>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable bg-primary h-100 shadow" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <CascadingAuthenticationState>
+            <AuthorizeView>
+                <Authorized>
+                    <!-- Liens visibles pour tous les utilisateurs authentifiés -->
+
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="/">
+                            <MatIcon Icon="@MatIconNames.People" Class="me-3"></MatIcon> Collaborateurs
+                        </NavLink>
+                    </div>
+
+                  
+
+                    <!-- Lien visible uniquement pour les utilisateurs avec le rôle "Admin" -->
+                        <div class="nav-item px-3">
+                            <NavLink class="nav-link" href="projet">
+                                <MatIcon Icon="@MatIconNames.Poll" Class="me-3"></MatIcon> Projets
+                            </NavLink>
+                        </div>
+
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="@logout">
+                            <MatIcon Icon="@MatIconNames.Poll" Class="me-3"></MatIcon> Log Out
+                        </NavLink>
+                    </div>
+
+                </Authorized>
+
+                <!-- Redirection pour les utilisateurs non autorisés -->
+                <NotAuthorized>
+                    <RedirectToLogin></RedirectToLogin>
+                </NotAuthorized>
+            </AuthorizeView>
+        </CascadingAuthenticationState>
+    </nav>
+</div>
+
+@code {
+    private bool collapseNavMenu = true;
+
+    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+}
+
+@code {
+   
+    private void logout()
+    {
+        Auth.Logout();
+    }
+}
